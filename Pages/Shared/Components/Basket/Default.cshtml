@@ -1,0 +1,13 @@
+﻿@model CakeStore.Models.Basket
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@if(Model.Items.Any())
+{
+    <a asp-page="/Checkout" class="btn btn-sm btn-primary position-relative" title="@Model.NumberOfItems items in the basket">
+        <i class="bi bi-cart-4"></i>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            @Model.NumberOfItems
+        </span>
+    </a>
+}

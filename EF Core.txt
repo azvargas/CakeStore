@@ -1,0 +1,14 @@
+﻿1. Add models to "Models" folder.
+2. Add EF Core package to project (the package that involves the database like "Microsoft.EntityFrameworkCore.Sqlite")
+3. Creates a class that inherits DbContext
+4. Override "OnConfiguring" to connect to the database
+5. Inject the context
+
+Migrating
+6. Create a class that inherits from IEntityTypeConfiguration<T>
+7. Implement any custom configuration
+8. Override "OnModelCreating" to apply the configuration
+9. Create a class that has collections of objects ihat will seed the database and implements Seed method
+10. Call the Seed method from OnModelCreating
+11. Create the migration with the "dotnet ef migrations" command
+12. Update database with the "dotnet ef command" database
